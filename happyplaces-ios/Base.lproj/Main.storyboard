@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="MainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HMg-HW-QCb">
+                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0h-w1-E0h">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="D4y-hC-XB6"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="7np-EE-l73">
+                                        <barButtonItem key="rightBarButtonItem" image="iconLoading" id="BPl-gP-HP8">
+                                            <color key="tintColor" red="0.8862745098" green="0.52549019610000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="reloadData:" destination="vXZ-lx-hvc" id="tps-QK-nlp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eY-NU-NOc">
+                                <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="orc-cA-GVn"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="Bars" image="tabBarDring" id="flS-HD-5Ya" userLabel="Bar"/>
+                                    <tabBarItem tag="1" title="Restaurants" image="tabBarFood" id="edT-vN-Duz" userLabel="Restaurant"/>
+                                    <tabBarItem tag="2" title="Culture" image="tabBarOther" id="e8l-W8-6ny" userLabel="Autre"/>
+                                </items>
+                                <color key="tintColor" red="0.8862745098" green="0.52549019610000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7eY-NU-NOc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="5Gk-Fx-d7G"/>
+                            <constraint firstItem="HMg-HW-QCb" firstAttribute="top" secondItem="W0h-w1-E0h" secondAttribute="bottom" id="A10-3X-ih7"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="7eY-NU-NOc" secondAttribute="bottom" id="Gh9-ib-Kpe"/>
+                            <constraint firstAttribute="trailing" secondItem="W0h-w1-E0h" secondAttribute="trailing" id="I7r-RY-tyc"/>
+                            <constraint firstItem="W0h-w1-E0h" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="JuS-Sb-rnM"/>
+                            <constraint firstAttribute="trailing" secondItem="HMg-HW-QCb" secondAttribute="trailing" id="gZA-Yh-5go"/>
+                            <constraint firstItem="HMg-HW-QCb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="k2h-jL-iPK"/>
+                            <constraint firstItem="7eY-NU-NOc" firstAttribute="top" secondItem="HMg-HW-QCb" secondAttribute="bottom" id="vaL-EC-aMq"/>
+                            <constraint firstAttribute="trailing" secondItem="7eY-NU-NOc" secondAttribute="trailing" id="zAI-YG-fRe"/>
+                            <constraint firstItem="W0h-w1-E0h" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="zr6-cH-UAm"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="HMg-HW-QCb" id="iWP-Ff-NzL"/>
+                        <outlet property="navItem" destination="7np-EE-l73" id="6Jk-sa-CtE"/>
+                        <outlet property="tabBar" destination="7eY-NU-NOc" id="K05-91-Pz4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="99"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iconLoading" width="22" height="22"/>
+        <image name="tabBarDring" width="22" height="22"/>
+        <image name="tabBarFood" width="22" height="22"/>
+        <image name="tabBarOther" width="22" height="22"/>
+    </resources>
+</document>
